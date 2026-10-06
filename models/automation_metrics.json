@@ -1,0 +1,31 @@
+{
+  "best_model": "RandomForest",
+  "features": [
+    "posting_hour_std",
+    "hashtag_diversity",
+    "hashtag_entropy",
+    "has_cta",
+    "avg_caption_length",
+    "avg_emoji_count",
+    "posts_per_month",
+    "ff_ratio",
+    "log_followers"
+  ],
+  "results": {
+    "LogisticRegression": {
+      "accuracy": 0.722,
+      "macro_f1": 0.6941,
+      "precision_1": 0.5048,
+      "recall_1": 0.7447,
+      "f1_1": 0.6017
+    },
+    "RandomForest": {
+      "accuracy": 0.85,
+      "macro_f1": 0.8026,
+      "precision_1": 0.7895,
+      "recall_1": 0.6383,
+      "f1_1": 0.7059
+    }
+  },
+  "note": "Labels are heuristic-based, not ground truth."
+}

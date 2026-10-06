@@ -1,0 +1,54 @@
+# ============================================================
+# config.yaml — Central configuration for the project
+# No credentials here. Use .env for secrets.
+# ============================================================
+
+scraping:
+  min_delay_seconds: 4
+  max_delay_seconds: 9
+  batch_size: 250
+  max_consecutive_failures: 5
+  max_followers: 1_000_000        # Skip accounts >= 1M followers
+  posts_to_fetch: 10
+  session_path: "./session/"
+  backoff_base_seconds: 60        # Initial backoff on 429
+  backoff_max_seconds: 600        # Max backoff cap
+
+niches:
+  - Tech
+  - Fashion
+  - Fitness
+  - Lifestyle
+  - Travel
+
+cleaning:
+  bot_min_followers: 10000
+  bot_max_engagement: 0.1         # %
+  spam_max_followers: 100
+  spam_min_following: 5000
+  suspicious_engagement: 20.0     # % — likely fake
+  winsorize_percentile: 99
+
+features:
+  tfidf_max_features: 5000
+  tfidf_ngram_range: [1, 2]
+
+models:
+  test_size: 0.2
+  cv_folds: 5
+  n_estimators: 200
+  learning_rate: 0.1
+
+ranking_weights:
+  engagement: 0.40
+  engagement_residual: 0.20
+  log_followers: 0.15
+  posting_consistency: 0.15
+  automation_probability: 0.10
+
+follower_tiers:
+  nano: [0, 10000]
+  micro: [10000, 100000]
+  mid: [100000, 1000000]
+
+random_seed: 42

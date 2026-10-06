@@ -1,0 +1,41 @@
+{
+  "best_model": "LinearRegression",
+  "features": [
+    "log_followers",
+    "posts_per_month",
+    "hashtag_diversity",
+    "hashtag_entropy",
+    "avg_caption_length",
+    "avg_emoji_count",
+    "has_cta",
+    "has_link",
+    "ff_ratio",
+    "is_nano",
+    "is_micro",
+    "is_mid",
+    "automation_flag"
+  ],
+  "results": {
+    "LinearRegression": {
+      "mae": 1.2552,
+      "rmse": 1.5378,
+      "r2": 0.4176,
+      "cv_r2_mean": 0.444,
+      "cv_r2_std": 0.0307
+    },
+    "RandomForest": {
+      "mae": 1.2932,
+      "rmse": 1.6021,
+      "r2": 0.3679,
+      "cv_r2_mean": 0.3959,
+      "cv_r2_std": 0.0295
+    },
+    "GradientBoosting": {
+      "mae": 1.2782,
+      "rmse": 1.5823,
+      "r2": 0.3834,
+      "cv_r2_mean": 0.3912,
+      "cv_r2_std": 0.0418
+    }
+  }
+}
