@@ -90,6 +90,17 @@ def generate_report(output_path):
     )
     pdf.chapter_body(body4)
 
+    pdf.chapter_title('5. Appendix: Dashboard Outputs')
+    pdf.chapter_body("Below are the screenshots of the generated dashboard and model outputs.")
+    
+    import os
+    img_dir = r"D:\SR Next-Intern\sr-next-influencer\Output-Screenshot"
+    if os.path.exists(img_dir):
+        for img_name in sorted(os.listdir(img_dir)):
+            if img_name.endswith(".png"):
+                pdf.add_page()
+                pdf.image(os.path.join(img_dir, img_name), w=190)
+
     pdf.output(output_path)
     print(f"PDF successfully generated at: {output_path}")
 
